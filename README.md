@@ -5,6 +5,6 @@ Work in progress. Stay tuned.
 ## Deploy
 
 ```
-firebase deploy
+firebase deploy --only functions:firebaseToNotifly
 ```
 
