@@ -15,7 +15,7 @@ const googleAnalyticsConversionEvents = config.googleAnalyticsConversionEvents;
 
 for (const conversionEvent of googleAnalyticsConversionEvents) {
   cloudFunctions[`firebaseToNotifly_${conversionEvent}`] = functions.analytics.event(conversionEvent).onLog((event) => {
-    console.log()
+    console.log();
     console.log("user", event.user);
     console.log("user id: ", event.user?.userId);
     console.log("event_name: ", event.name);
@@ -27,4 +27,4 @@ for (const conversionEvent of googleAnalyticsConversionEvents) {
 
 exports.firebaseToNotifly = {
   ...cloudFunctions,
-}
+};
