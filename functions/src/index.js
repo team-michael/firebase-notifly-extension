@@ -5,6 +5,7 @@
  * @param {!Object} context Metadata for the event.
  */
 require("dotenv").config();
+const fetch = require("node-fetch");
 const functions = require("firebase-functions");
 const config = require("./config");
 // TODO: read conversion event lists from config
