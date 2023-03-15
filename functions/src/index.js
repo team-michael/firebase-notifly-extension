@@ -6,6 +6,9 @@
  */
 const functions = require("firebase-functions");
 
+// TODO: read conversion event lists from config
+// TODO: Notifly API call
+
 exports.firebaseToNotifly = functions.analytics.event("ticket_purchase").onLog((event) => {
   console.log("user", event.user);
   console.log("user id: ", event.user?.userId);

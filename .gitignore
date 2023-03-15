@@ -352,3 +352,4 @@ v-env/
 !source/lib
 
 .idea
+.firebaserc
