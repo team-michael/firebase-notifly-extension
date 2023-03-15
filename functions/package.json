@@ -10,12 +10,12 @@
     "test": "mocha --exit test/*.spec.js"
   },
   "engines": {
-    "node": "18"
+    "node": "16"
   },
   "main": "src/index.js",
   "dependencies": {
     "@babel/runtime": "^7.14.0",
-    "firebase-admin": "^9.9.0",
+    "firebase-admin": "^11.5.0",
     "firebase-functions": "^4.2.1",
     "flat": "^5.0.2"
   },
