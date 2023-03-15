@@ -7,10 +7,10 @@
 const functions = require("firebase-functions");
 
 exports.firebaseToNotifly = functions.analytics.event("ticket_purchase").onLog((event) => {
-    console.log('user', event.user)
-    console.log('user id: ', event.user?.userId);
-    console.log('event_name: ', event.name);
-    // project id
-    // username
-    // password
+  console.log("user", event.user);
+  console.log("user id: ", event.user?.userId);
+  console.log("event_name: ", event.name);
+  // project id
+  // username
+  // password
 });

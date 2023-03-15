@@ -4,7 +4,7 @@ module.exports = {
   password: process.env.NOTIFLY_PASSWORD,
   googleAnalyticsConversionEvents:
     (process.env.GOOGLE_ANALYTICS_CONVERSION_EVENTS || "")
-      .split(",")
-      .map((f) => f.trim())
-      .filter((f) => f),
+        .split(",")
+        .map((f) => f.trim())
+        .filter((f) => f),
 };
