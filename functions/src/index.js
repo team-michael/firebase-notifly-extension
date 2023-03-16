@@ -4,11 +4,14 @@
  * @param {!Object} event Event payload.
  * @param {!Object} context Metadata for the event.
  */
+
+
 require("dotenv").config();
 const fetch = require("node-fetch");
 const functions = require("firebase-functions");
 const config = require("./config");
 // TODO: read conversion event lists from config
+
 /**
  * log event using notifly server-api.
  *
@@ -41,7 +44,6 @@ async function trackEvent(eventName, userID) {
     body: authorizeEncodedBody,
   }).then(async (response) => {
     const token = (await response.json());
-    console.log(token.error);
     return token.data;
   });
   const trackEventHeaders = {
