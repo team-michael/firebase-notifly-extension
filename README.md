@@ -19,7 +19,7 @@ To install (deploy) the Cloud Functions, follow these steps:
 1. Clone the Firebase - Notifly Extension repository:
 
 ```
-git clone <repository-url>
+git clone https://github.com/team-michael/firebase-notifly-extension.git
 ```
 
 2. Navigate to the cloned directory and install the required npm packages:
