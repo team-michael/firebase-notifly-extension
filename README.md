@@ -57,7 +57,6 @@ firebase functions:config:get
 
 ```console
 firebase deploy --only functions:firebaseToNotifly
-
 ```
 
 ## Cloud Functions

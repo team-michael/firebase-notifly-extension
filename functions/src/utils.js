@@ -22,7 +22,7 @@ async function sendEvent(eventName, userID, projectID, userName, password) {
   const trackEventUrl = "https://api.notifly.tech/track-event";
   const trackEventBody = {
     projectID: projectID,
-    eventName: eventName,
+    eventName: `firebase__${eventName}`,
     isGlobalEvent: false,
     segmentationEventParamKeys: [],
     userID: userID,
