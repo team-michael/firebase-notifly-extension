@@ -17,7 +17,7 @@ for (const conversionEvent of googleAnalyticsConversionEvents) {
   cloudFunctions[conversionEvent] = functions
       .region(location)
       .analytics.event(conversionEvent).onLog(async (event) => {
-        await sendEvent(event.name, event.user?.userId, projectID, userName, password);
+        await sendEvent(`GA_${event.name}`, event.user?.userId, projectID, userName, password);
       });
 }
 
