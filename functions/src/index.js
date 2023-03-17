@@ -1,15 +1,24 @@
-require("dotenv").config();
 const functions = require("firebase-functions");
-const config = require("./config");
 const {sendEvent} = require("./utils");
 
+const {
+  location,
+  project_id: projectID,
+  user_name: userName,
+  password,
+  conversion_events: googleAnalyticsConversionEventsStr,
+} = functions.config().notifly;
+const googleAnalyticsConversionEvents = googleAnalyticsConversionEventsStr.split(",")
+    .map((f) => f.trim())
+    .filter((f) => f);
+
 const cloudFunctions = {};
-const googleAnalyticsConversionEvents = config.googleAnalyticsConversionEvents;
-console.log(googleAnalyticsConversionEvents);
 for (const conversionEvent of googleAnalyticsConversionEvents) {
-  cloudFunctions[conversionEvent] = functions.analytics.event(conversionEvent).onLog(async (event) => {
-    await sendEvent(event.name, event.user?.userId);
-  });
+  cloudFunctions[conversionEvent] = functions
+      .region(location)
+      .analytics.event(conversionEvent).onLog(async (event) => {
+        await sendEvent(event.name, event.user?.userId, projectID, userName, password);
+      });
 }
 
 exports.firebaseToNotifly = {
