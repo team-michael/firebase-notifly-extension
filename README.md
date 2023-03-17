@@ -29,7 +29,27 @@ cd firebase-notifly-extension
 npm install
 ```
 
-3. Deploy the Cloud Functions:
+3. Set environment configuration with the Firebase CLI
+
+Set 5 configurations:
+
+1. Location
+2. Conversion events to track in Notifly
+3. Notifly project ID
+4. Notifly API/SDK username
+5. Notifly API/SDK password
+
+Example:
+```
+firebase functions:config:set notifly.location='asia-northeast3' notifly.conversion_events='ticket_purchase,loginpage_visit' notifly.project_id='michael' notifly.username='minyong' notifly.password='111111'
+```
+
+If you want to check the cloud function configuration, run
+```
+firebase functions:config:get
+```
+
+4. Deploy the Cloud Functions:
 
 ```
 firebase deploy --only functions:firebaseToNotifly
@@ -47,4 +67,3 @@ This extension uses Google Cloud Platform services, which may incur charges if y
 ## Support
 
 If you need support or have questions about the Firebase - Notifly Extension, please contact us at contact@workmichael.com.
-

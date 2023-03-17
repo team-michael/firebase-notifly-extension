@@ -1,4 +1,3 @@
-require("dotenv").config();
 const fetch = require("node-fetch");
 
 /**
@@ -6,20 +5,23 @@ const fetch = require("node-fetch");
  *
  * @param {!Object} eventName Name of the event
  * @param {!Object} userID User ID
+ * @param {!Object} projectID Project ID
+ * @param {!Object} userName User name
+ * @param {!Object} password Password
  */
-async function sendEvent(eventName, userID) {
+async function sendEvent(eventName, userID, projectID, userName, password) {
   const authorizeHeaders = {
     "Content-Type": "application/json",
   };
 
   const authorizeUrl = "https://api.notifly.tech/authorize";
   const authorizeBody = {
-    userName: process.env.NOTIFLY_USERNAME,
-    password: process.env.NOTIFLY_PASSWORD,
+    userName: userName,
+    password: password,
   };
   const trackEventUrl = "https://api.notifly.tech/track-event";
   const trackEventBody = {
-    projectID: process.env.NOTIFLY_PROJECT_ID,
+    projectID: projectID,
     eventName: eventName,
     isGlobalEvent: false,
     segmentationEventParamKeys: [],
