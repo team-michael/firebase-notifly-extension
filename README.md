@@ -1,5 +1,9 @@
 # Firebase - Notifly Extension
 
+_For the Google Analytics Integration guide, please refer to our documentation:_
+- [Google Analytics Integration guide (English)](https://docs.notifly.tech/category/google-analytics-integration)
+- [Google Analytics Integration guide (Korean)](https://docs.notifly.tech/ko/category/google-analytics-integration)
+
 The Firebase - Notifly Extension is a set of Google Cloud Functions that sends Firebase (Google Analytics) conversion events to Notifly. It enables seamless integration between your Firebase project and Notifly, allowing you to track conversion events and utilize Notifly's features based on these events.
 
 ## Prerequisites
@@ -18,13 +22,13 @@ To install (deploy) the Cloud Functions, follow these steps:
 
 1. Clone the Firebase - Notifly Extension repository:
 
-```
+```console
 git clone https://github.com/team-michael/firebase-notifly-extension.git
 ```
 
 2. Navigate to the cloned directory and install the required npm packages:
 
-```
+```console
 cd firebase-notifly-extension
 npm install
 ```
@@ -33,25 +37,25 @@ npm install
 
 Set 5 configurations:
 
-1. Location
-2. Conversion events to track in Notifly
-3. Notifly project ID
-4. Notifly API/SDK username
-5. Notifly API/SDK password
+    1. Location
+    2. Conversion events to track in Notifly
+    3. Notifly project ID
+    4. Notifly API/SDK username
+    5. Notifly API/SDK password
 
 Example:
-```
+```console
 firebase functions:config:set notifly.location='asia-northeast3' notifly.conversion_events='ticket_purchase,loginpage_visit' notifly.project_id='michael' notifly.username='minyong' notifly.password='111111'
 ```
 
 If you want to check the cloud function configuration, run
-```
+```console
 firebase functions:config:get
 ```
 
 4. Deploy the Cloud Functions:
 
-```
+```console
 firebase deploy --only functions:firebaseToNotifly
 
 ```
