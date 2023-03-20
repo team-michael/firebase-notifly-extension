@@ -37,11 +37,13 @@ npm install
 
 Set 5 configurations:
 
-    1. Location
-    2. Conversion events to track in Notifly
-    3. Notifly project ID
-    4. Notifly API/SDK username
-    5. Notifly API/SDK password
+| Variable Name               | Description                                                  | Example Value                |
+|-----------------------------|--------------------------------------------------------------|------------------------------|
+| notifly.location            | The location/region for the Cloud Functions deployment       | 'asia-northeast3'           |
+| notifly.conversion_events   | Comma-separated list of Google Analytics conversion events   | 'ticket_purchase,loginpage_visit' |
+| notifly.project_id          | The Notifly project ID                                       | 'michael'                    |
+| notifly.username            | The Notifly username used for authentication                | 'jordan'                    |
+| notifly.password            | The Notifly password used for authentication                | '111111'                     |
 
 Example:
 ```console
