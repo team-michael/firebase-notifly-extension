@@ -4,7 +4,7 @@ const {sendEvent} = require("./utils");
 const {
   location,
   project_id: projectID,
-  user_name: userName,
+  username: userName,
   password,
   conversion_events: googleAnalyticsConversionEventsStr,
 } = functions.config().notifly;
