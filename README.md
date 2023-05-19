@@ -61,6 +61,14 @@ firebase functions:config:get
 firebase deploy --only functions:firebaseToNotifly
 ```
 
+## Uninstall Firebase - Notifly Extension
+
+```console
+firebase functions:delete firebaseToNotifly
+```
+
+In CLI, you will be able to verify the list of Cloud functions to be deleted.
+
 ## Cloud Functions
 
 The Firebase - Notifly Extension creates one Cloud Function for each conversion event specified in your project. These Cloud Functions listen for the corresponding conversion events in your Firebase project and send the event data to Notifly.
